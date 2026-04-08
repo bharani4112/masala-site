@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
      3. HAMBURGER MOBILE MENU
      ========================================== */
   const hamburger = document.querySelector('.hamburger');
-  const navMenu   = document.querySelector('.nav-menu');
+  const navMenu = document.querySelector('.nav-menu');
 
   if (hamburger && navMenu) {
     hamburger.addEventListener('click', function () {
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ==========================================
      6. WHATSAPP FLOATING POPUP — shows after 5s
      ========================================== */
-  const waPopup     = document.getElementById('wa-popup');
+  const waPopup = document.getElementById('wa-popup');
   const waPopupClose = document.getElementById('wa-popup-close');
 
   if (waPopup) {
@@ -124,9 +124,9 @@ document.addEventListener('DOMContentLoaded', function () {
      8. COUNTER ANIMATION for Stats Section
      ========================================== */
   function animateCounter(el, target, duration) {
-    const start     = 0;
+    const start = 0;
     const increment = target / (duration / 16);
-    let   current   = start;
+    let current = start;
 
     const timer = setInterval(function () {
       current += increment;
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function () {
       function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
-            const target   = parseInt(entry.target.dataset.target, 10);
+            const target = parseInt(entry.target.dataset.target, 10);
             const duration = 1800;
             animateCounter(entry.target, target, duration);
             statsObserver.unobserve(entry.target);
@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function () {
      ========================================== */
   document.querySelectorAll('.product-card').forEach(function (card) {
     const weightBtns = card.querySelectorAll('.weight-btn');
-    const priceEl    = card.querySelector('.current-price');
+    const priceEl = card.querySelector('.current-price');
 
     weightBtns.forEach(function (btn) {
       btn.addEventListener('click', function () {
@@ -179,15 +179,15 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         /* Update WhatsApp link with chosen weight */
-        const waLink    = card.querySelector('.btn-whatsapp');
-        const prodName  = card.querySelector('.product-name');
+        const waLink = card.querySelector('.btn-whatsapp');
+        const prodName = card.querySelector('.product-name');
         if (waLink && prodName) {
-          const weight  = btn.textContent.trim();
-          const name    = prodName.textContent.trim();
-          const msg     = encodeURIComponent(
+          const weight = btn.textContent.trim();
+          const name = prodName.textContent.trim();
+          const msg = encodeURIComponent(
             'Hi! I want to order ' + name + ' (' + weight + ')'
           );
-          waLink.href = 'https://wa.me/91XXXXXXXXXX?text=' + msg;
+          waLink.href = 'https://wa.me/917695939649?text=' + msg;
         }
       });
     });
@@ -243,13 +243,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
       /* Simulate success message */
       const submitBtn = contactForm.querySelector('.form-submit');
-      const origText  = submitBtn.innerHTML;
+      const origText = submitBtn.innerHTML;
       submitBtn.innerHTML = '✅ Message Sent!';
-      submitBtn.disabled  = true;
+      submitBtn.disabled = true;
 
       setTimeout(function () {
         submitBtn.innerHTML = origText;
-        submitBtn.disabled  = false;
+        submitBtn.disabled = false;
         contactForm.reset();
       }, 3000);
     });
